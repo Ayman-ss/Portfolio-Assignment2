@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<!--This declares that the document is HTML5, it is required at the top of every modern HTML5 page-->
+<html lang="en">
+<!--root element of the document, lang="en" indicates the content is in english-->
+
+<head>
+    <meta charset="UTF-8">
+    <!--sets character encoding to UTF-8 which is the standard for modern web, ensures special characters display correctly-->
+    
+    <title><%= title || "Portfolio - Ayman Sohail" %></title>
+    <!--sets the title of the page and shows in the broswer tab(also used by search engines)-->
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Desktop-->
+    <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
+    <!--links the destop stylesheet, applies the CSS rules when the screen size is at least 1025px wide-->
+
+    <!--Tablet-->
+    <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
+    <!-- Links the tablet stylesheet, applies the CSS rules when the screen size is between 641px and 1024px -->
+
+    <!--Mobile-->
+    <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
+    <!--Links the mobile stylesheet, applies the CSS rules when the screen size is 640px or smaller -->
+
+</head>
+<!--head ends-->
+
+<!--body starts-->
+<body>
+<!--contains everything visible on the page-->
+
+<div id="wrapper">
+<!--a div tag to hold the entire layout, makes it easier to style content-->
+
+    <!--Headers starts-->
+    <header id="banner">
+    <!--semantic header element for the top banner-->
+
+        <h1>Portfolio - Ayman Sohail</h1>
+        <!--Main heading (most important) defines the title of the page-->
+
+        <nav>
+        <!--semantic <nav> element(holds the navigation menus for the site)-->
+            
+            <ul id="main-nav">
+            <!-- unordered list for the navigation structure -->
+                
+                <li><a href="/" class="button">Home</a></li>
+                <!--list item witj a link to the homepage using <a>-->
+                
+                <li><a href="/about" class="button">About</a></li>
+                <!--link to the About page-->
+
+                <li><a href="/projects" class="button">Projects</a></li>
+                <!--link to the Projects page-->
+
+                <li><a href="/contact" class="button">Contact</a></li>
+                <!--link to the Contact page-->
+            
+         </ul>
+        </nav>
+    </header> <!--Header ends-->
+
+    <article>
+    <!--semantuc <article> tag-->
+        
+        <h2>Welcome</h2>
+        <!--Secondary heading-->
+
+        <p>This is my HTML5/CSS3 portfolio built with floats, fluid design, media queries, semantic tags, and simple CSS transforms.</p>
+        <!--<p> is a Paragraph element that holds text related content-->
+         
+        <section id="promo">
+        
+        <h3>Featured</h3>
+        <!--tertiary heading-->
+        
+        <div class="box"><p>HTML5</p></div>
+        <!--a div tag with a class "box"-->
+
+        <div class="box"><p>CSS3</p></div>
+
+        <div class="box"><p>Responsive</p></div>
+        <!--Highlights responsive design-->
+
+        <div class="box"><p>Accessibility</p></div>
+        <!--Highlights accessibility practices-->
+
+        <div class="clear"></div>
+        <!-- Used to clear floats in CSS-->
+
+        </section>
+    </article>
+
+
+    <footer>
+    <!--contains copyright  or contact infrormation-->
+    <p>&copy; <span id="year">2025</span> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
+
+    </footer>
+</div>
+</body> <!--body ends-->
 </html>
+<!--index document ends-->

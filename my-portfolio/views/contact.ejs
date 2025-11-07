@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title || "Portfolio — Ayman Sohail" %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Desktop styles-->
+  <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
+
+  <!--Tablet styles-->
+  <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
+
+  <!-- Mobile styles -->
+  <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
+</head>
+
+<body>
+<div id="wrapper">
+  <header id="banner">
+    <h1>Portfolio — Ayman Sohail</h1>
+    <nav>
+      <ul id="main-nav">
+        <li><a href="/" class="button">Home</a></li>
+        <li><a href="/about" class="button">About</a></li>
+        <li><a href="/projects" class="button">Projects</a></li>
+        <li><a href="/contact" class="button">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--article starts-->
+  <article>
+    
+    <h2>Contact Me</h2>
+
+    <p>Please fill out the form and I'll get back to you.</p>
+    <!--text indicator for users to know they can fill this page out for me to get back to them-->
+
+    <form id="contact" action="/contact" method="post" novalidate>
+    <!--creating a user input form using <form>. action="/contact" means it will send data to the contact route. novalidate is used to disable browsers default validation so the custom validation can be applied-->
+
+        <!--Label for name input-->
+        <p><label for="name">Name</label><br>
+        <input id="name" name="name" type="text" required></p>
+
+        <!--Label for email input-->
+        <p><label for="email">Email</label><br>
+        <input id="email" name="email" type="email" required></p>
+        <!--type="email" is used to validate that the entry is an email address-->
+
+        <!--Label for phone input-->
+        <p><label for="phone">Cell No.</label><br>
+        <input id="phone" name="phone" type="tel" required
+             pattern="^[0-9\\-\\s\\(\\)]{7,}$" placeholder="e.g., 647-555-0123"></p>
+
+        <!--Label for comments input-->
+        <p><label for="msg">Comments</label><br>
+        <textarea id="msg" name="msg" rows="6" required></textarea></p>
+
+        <!--adding a submit button to submit the form data-->
+        <p><button type="submit">Submit</button></p>
+   
+    </form>
+
+  </article>
+  <!--article ends-->
+
+
+  <!--Footer starts-->
+  <footer>
+
+     <p>&copy; <%= new Date().getFullYear() %> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
+
+  </footer>
+  <!--footer ends-->
+
+</div>
+<!--wrapper ends-->
+
+</body>
+</html>
+<!--Document ends-->

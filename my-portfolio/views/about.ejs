@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title || "Portfolio — Ayman Sohail" %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--makes the page responsive by setting the width to the devices screen size-->
+
+  <!--Desktop styles-->
+  <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
+  
+  <!--Tablet styles-->
+  <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
+  
+  <!--Mobile styles-->
+  <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
+</head>
+
+
+<body>
+
+<div id="wrapper">
+<!--<div> to group all page content together to keep the layout organized-->
+
+    <!--header starts-->
+    <header id="banner">
+
+        <h1>Portfolio - Ayman Sohail</h1>
+
+        <nav>
+
+            <ul id="main-nav">
+            <!--adding an unordered list to hold the navigation items-->
+                
+            <!--Links to all the pages-->
+            <li><a href="/" class="button">Home</a></li>
+            <li><a href="/about" class="button">About</a></li>
+            <li><a href="/projects" class="button">Projects</a></li>
+            <li><a href="/contact" class="button">Contact</a></li>
+           
+            </ul>
+        </nav>
+    </header>
+    <!--header ends-->
+
+    <!--article starts-->
+    <article>
+
+        <h2>About me</h2>
+
+        <section>
+        <!--grouping the related content such as the headshot and intro-->
+
+         <img id="headshot" src="/images/Headshot.jpeg" alt="Ayman Sohail Headshot" />
+         <!--adding an image to show my headshot-->
+         <p>Hello! I’m Ayman Sohail, a second year Networking and IT Security student at Ontario Tech University. I enjoy building projects in Networking, Security, and Web Development.</p>
+         <!--adding a paragraph to introduce myself-->
+        </section>
+
+        <section>
+        <!--another section to add my intro video-->
+            
+            <h3>Intro Video</h3>
+
+            <!--adding my video and thumbnail here-->
+
+            <video id="video" width="320" height="240" controls poster="/images/Thumbnail.jpg">
+            <!--width/height sets the size for the video, controls add the play/pause/volume UI, the poster sets the thumbnail-->
+                <source src="/images/Video-Mp4.mp4" type="video/mp4">
+                <!--MP4 format is for videos-->
+                <source src="/images/Video.ogg" type="video/ogg">
+                <!--OGG format is for browsers that don't support MP4-->
+                Your browser doesn't support the video tag.
+                <!--this text displays if the browser cannot play the video-->
+            </video>
+            
+            <p class="Note">Please enjoy this short video that I made!</p>
+
+        </section>
+        
+    </article>
+    <!--article ends-->
+
+    <!--footer starts-->
+    <footer>
+
+        <p>&copy; <%= new Date().getFullYear() %> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
+
+    </footer>
+</div>
+<!--wrapper ends-->
+</body>
+</html>
+<!--document ends-->

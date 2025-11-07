@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* style-mobile.css 
+   for this file I used the same concepts from Weeks 1–4 as the desktop CSS 
+   but adapted them for mobile using single-column, larger buttons, stacked layout. */
+
+
+html, body { margin:0; padding:0; }
+body {
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  /* Gradient background (same colors as desktop) */
+  background: linear-gradient(135deg, #2b0040, #6a0dad, #d63384);
+  color: #ffffff;
+}
+
+#wrapper {
+  background: linear-gradient(160deg, #3d0070, #8a2be2, #ff66b2);
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ffffff;
+  width: 95%; 
+}
+
+/* Banner */
+#banner { 
+  background: linear-gradient(90deg, #6a0dad, #d63384);
+  padding: 10px 0; 
+}
+#banner h1 { color: #ffe6f7; margin-left: 15px; }
+
+/* Mobile-friendly nav  */
+nav ul#main-nav { list-style: none; margin: 0; padding: 0; }
+nav ul#main-nav li { display: block; margin: 8px 0 8px 15px; }
+nav ul#main-nav a.button, nav ul#main-nav a {
+  background: #8a2be2; 
+  color: white; 
+  padding: 12px 16px;
+  border-radius: 8px; 
+  text-decoration: none;
+  transition: background 0.5s, color 0.5s;
+  display: inline-block;
+}
+nav ul#main-nav a:hover { background: #ff66b2; color: #2b0040; }
+
+article { padding: 10px 0 20px 0; }
+h1,h2,h3,h4,h5,h6,p,li { margin-left: 15px; }
+.clear { clear: both; }
+
+
+.box {
+  float: none; width: 85%; height: 120px;
+  margin: 15px; 
+  background-color: #d63384; 
+  opacity: .9;
+  transition: transform 2s;
+}
+.box:hover { transform: scaleX(1.05) rotate(-5deg); } /* subtle on mobile */
+
+#promo { margin-top: 10px; }
+
+/* project thumbnails */
+.thumb { 
+  width: 85%; height: auto; 
+  background: #6a0dad; 
+  display: block; 
+  border: 2px solid #fff; 
+  margin-left: 15px; 
+}
+.zoomable { transition: transform 1.5s; }
+.zoomable:hover { transform: scale(1.05); }
+
+#headshot { width: 85%; height: auto; margin-left: 15px; border: 2px solid #fff; }
+
+.project { 
+  float: none; 
+  width: auto; 
+  margin: 10px 15px; 
+  background: linear-gradient(120deg, rgba(138,43,226,0.7), rgba(214,51,132,0.7)); 
+  border-radius: 8px;
+}
+
+/* Footer */
+footer { 
+  height: 80px; 
+  display: block; 
+  background: linear-gradient(180deg, #2b0040, #6a0dad);
+}
+footer p { margin-left: 15px; color: #ffe6f7; }

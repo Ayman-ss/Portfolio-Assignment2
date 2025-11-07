@@ -1,0 +1,128 @@
+@charset "UTF-8"; 
+/* this declares the character encoding for the CSS file*/
+
+/* Base shared styles */
+html, body { margin:0; padding:0; }
+/* this gets rid off default browser margins/padding for a clean canvas. */
+   
+body {
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  /* Sets fonts including fallback list. 
+    
+
+  /* purple and pink gradient for background */
+  background: linear-gradient(135deg, #2b0040, #6a0dad, #d63384);
+  /* using a Linear gradient*/
+
+  color: #ffffff; 
+  /* adding White text here */
+}
+
+/* Main wrapper */
+#wrapper {
+  background: linear-gradient(160deg, #3d0070, #8a2be2, #ff66b2); 
+  /* Gradient background for the centered wrapper container */
+
+  margin-left: auto;
+  margin-right: auto;
+  /* Centering the wrapper */
+
+  border: 2px solid #fff;
+
+  width: 960px; /* desktop width */
+  
+} /*wrapper ends*/
+
+/* banner (header) */
+#banner {
+  background: linear-gradient(90deg, #6a0dad, #d63384);
+  
+  padding: 10px 0;
+  /* adding spacing inside the banner. */
+}/*banner ends*/
+
+
+#banner h1 { 
+  color: #ffe6f7; 
+  margin-left: 15px; 
+  
+}
+
+/* navigation */
+nav ul#main-nav { list-style: none; margin: 0; padding: 0; }
+/* removing the default bullets and spacing from the nav list. */
+  
+nav ul#main-nav li { display: inline-block; margin: 0 8px; }
+
+nav ul#main-nav a.button, nav ul#main-nav a {
+  background: #8a2be2;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.5s, color 0.5s;
+  /* adding a hover effect */
+}
+
+nav ul#main-nav a:hover { background: #ff66b2; color: #2b0040; }
+
+article { padding: 10px 0 20px 0; }
+
+h1,h2,h3,h4,h5,h6,p,li { margin-left: 15px; }
+
+.clear { clear: both; }
+/* this clears floated elements.  */
+
+/* boxes using transform */
+.box {
+  height: 150px; 
+  width: 150px; 
+  float: left;
+  margin: 15px; 
+  background-color: #d63384; 
+  opacity: .9;
+  transition: transform 2s;
+  
+}
+.box:hover { transform: scaleX(1.3) rotate(-10deg); }
+
+
+/* project thumbnails */
+.thumb { 
+  width: 240px; height: 160px; 
+  background: #6a0dad; 
+  display: block; 
+  border: 2px solid #fff; 
+  margin-left: 15px; 
+}
+
+.zoomable { transition: transform 1.5s; }
+.zoomable:hover { transform: scale(1.2); }
+
+#left-column { float: left; width: 360px; height: 600px; background-color: rgba(106,13,173,0.6); }
+#right-column { float: right; width: 600px; height: 600px; background-color: rgba(214,51,132,0.5); }
+
+/* Headshot */
+#headshot { width: 300px; height: auto; margin-left: 15px; border: 2px solid #fff; }
+
+/* projects */
+.project { 
+  float: left; 
+  width: 45%; 
+  margin: 10px 2.5%; 
+  background: linear-gradient(120deg, rgba(138,43,226,0.7), rgba(214,51,132,0.7)); 
+  border-radius: 8px;
+ 
+}
+.project h3, .project p { margin-right: 15px; }
+
+
+/* Footer */
+footer { 
+  height: 80px; 
+  display: block; 
+  background: linear-gradient(180deg, #2b0040, #6a0dad);
+  
+}
+footer p { margin-left: 15px; color: #ffe6f7; }
+
