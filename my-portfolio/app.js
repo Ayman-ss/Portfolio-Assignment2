@@ -19,16 +19,31 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* ✅ tiny middleware to mark which page is active
+   - this makes the current navbar link highlight using Bootstrap's "active" class
+   - it checks the URL path and sets res.locals.active to match (home, about, projects, contact)
+*/
+app.use((req, res, next) => {
+  const map = {
+    '/': 'home',
+    '/about': 'about',
+    '/projects': 'projects',
+    '/contact': 'contact'
+  };
+  res.locals.active = map[req.path] || '';
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

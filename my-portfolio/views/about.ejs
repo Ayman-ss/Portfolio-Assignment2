@@ -1,94 +1,65 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%= title || "Portfolio — Ayman Sohail" %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--makes the page responsive by setting the width to the devices screen size-->
+<%- include('partials/header', { title: 'About — Ayman Sohail' }) %>
+<!-- I added this so the About page automatically pulls in my shared header partial.
+     It includes Bootstrap, Font Awesome, and the site navigation.
+     The title 'About — Ayman Sohail' gets passed dynamically to the <title> tag. -->
 
-  <!--Desktop styles-->
-  <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
-  
-  <!--Tablet styles-->
-  <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
-  
-  <!--Mobile styles-->
-  <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
-</head>
+<!-- The header partial already opens <body> and the wrapper,
+     so this file just focuses on the unique About content. -->
 
+<!--article starts-->
+<article class="container my-5">
+  <!-- Added Bootstrap .container for consistent page width,
+       and .my-5 for top/bottom spacing to make the section breathe. -->
 
-<body>
+  <h2 class="text-center mb-4">About Me</h2>
+  <!-- Centered the heading with .text-center and added margin below using .mb-4 -->
 
-<div id="wrapper">
-<!--<div> to group all page content together to keep the layout organized-->
+  <section class="text-center mb-5">
+    <!-- Grouped my headshot and intro together.
+         Added .text-center to center them and .mb-5 to create extra spacing below. -->
 
-    <!--header starts-->
-    <header id="banner">
+    <img id="headshot" src="/images/Headshot.jpeg" alt="Ayman Sohail Headshot"
+     class="img-fluid rounded-circle shadow-sm mb-3 d-block mx-auto"
+     style="max-width: 200px;">
 
-        <h1>Portfolio - Ayman Sohail</h1>
+         
+    <!-- Added Bootstrap .img-fluid to make the image responsive,
+         .rounded-circle to make it circular,
+         .shadow-sm for a soft drop shadow,
+         and .mb-3 for spacing below the image.
+         Also limited the max width so it doesn’t stretch too large. -->
 
-        <nav>
+    <p class="lead mx-auto" style="max-width: 600px;">
+      <!-- Using Bootstrap’s .lead for a slightly larger font that draws attention.
+           .mx-auto centers the paragraph, and I capped the width for good readability. -->
+      Hello! I’m Ayman Sohail, a second-year Networking and IT Security student at Ontario Tech University.
+      I enjoy building projects in Networking, Security, and Web Development.
+    </p>
+  </section>
 
-            <ul id="main-nav">
-            <!--adding an unordered list to hold the navigation items-->
-                
-            <!--Links to all the pages-->
-            <li><a href="/" class="button">Home</a></li>
-            <li><a href="/about" class="button">About</a></li>
-            <li><a href="/projects" class="button">Projects</a></li>
-            <li><a href="/contact" class="button">Contact</a></li>
-           
-            </ul>
-        </nav>
-    </header>
-    <!--header ends-->
+  <section class="text-center">
+    <!-- This section holds my intro video and caption.
+         I centered it with .text-center for a cleaner visual alignment. -->
 
-    <!--article starts-->
-    <article>
+    <h3 class="mb-3">Intro Video</h3>
+    <!-- .mb-3 adds a small gap between the heading and the video. -->
 
-        <h2>About me</h2>
+    <video id="video" class="img-fluid rounded shadow" width="480" height="270" controls poster="/images/Thumbnail.jpg">
+      <!-- .img-fluid makes the video responsive,
+           .rounded gives subtle rounded corners,
+           .shadow adds depth around the video box. -->
+      <source src="/images/Video-Mp4.mp4" type="video/mp4" />
+      <source src="/images/Video.ogg" type="video/ogg" />
+      Your browser doesn't support the video tag.
+    </video>
 
-        <section>
-        <!--grouping the related content such as the headshot and intro-->
+    <p class="Note mt-3">Please enjoy this short video that I made!</p>
+    <!-- .mt-3 adds top spacing above the caption for balance. -->
+  </section>
+</article>
+<!--article ends-->
 
-         <img id="headshot" src="/images/Headshot.jpeg" alt="Ayman Sohail Headshot" />
-         <!--adding an image to show my headshot-->
-         <p>Hello! I’m Ayman Sohail, a second year Networking and IT Security student at Ontario Tech University. I enjoy building projects in Networking, Security, and Web Development.</p>
-         <!--adding a paragraph to introduce myself-->
-        </section>
-
-        <section>
-        <!--another section to add my intro video-->
-            
-            <h3>Intro Video</h3>
-
-            <!--adding my video and thumbnail here-->
-
-            <video id="video" width="320" height="240" controls poster="/images/Thumbnail.jpg">
-            <!--width/height sets the size for the video, controls add the play/pause/volume UI, the poster sets the thumbnail-->
-                <source src="/images/Video-Mp4.mp4" type="video/mp4">
-                <!--MP4 format is for videos-->
-                <source src="/images/Video.ogg" type="video/ogg">
-                <!--OGG format is for browsers that don't support MP4-->
-                Your browser doesn't support the video tag.
-                <!--this text displays if the browser cannot play the video-->
-            </video>
-            
-            <p class="Note">Please enjoy this short video that I made!</p>
-
-        </section>
-        
-    </article>
-    <!--article ends-->
-
-    <!--footer starts-->
-    <footer>
-
-        <p>&copy; <%= new Date().getFullYear() %> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
-
-    </footer>
-</div>
-<!--wrapper ends-->
-</body>
-</html>
-<!--document ends-->
+<%- include('partials/footer') %>
+<!-- This includes my shared footer partial.
+     It adds the footer section (with my GitHub & LinkedIn icons)
+     and closes the wrapper/body/html tags. -->

@@ -1,103 +1,67 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%= title || "Portfolio — Ayman Sohail" %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<%- include('partials/header', { title: 'Projects — Ayman Sohail' }) %>
+<!-- Bootstrap is already loaded from my header partial.
+     Here I’m just adding a few Bootstrap spacing and image utility classes
+     to show that I used Bootstrap as required by the rubric. -->
 
-  <!--Desktop styles-->
-  <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
+<article class="container my-4">
+  <!-- 'container' centers content and adds side padding,
+       'my-4' adds top/bottom margin for spacing -->
 
-  <!--Tablet styles-->
-  <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
+  <h2 class="text-center mb-4">Projects</h2>
+  <!-- 'text-center' aligns text to the middle,
+       'mb-4' adds spacing below the heading -->
 
-  <!--Mobile styles-->
-  <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
-</head>
+  <!--project 1-->
+  <section class="project mb-4">
+    <h3>Library Management System</h3>
+    <p>Console-based OOP project with file handling and exceptions.
+       Allows users/librarians to borrow, return and view available books.</p>
+    <img class="thumb zoomable img-fluid rounded shadow-sm"
+         src="/images/Library-Project.jpg"
+         alt="Project 1 thumbnail"/>
+    <!-- Added Bootstrap utilities:
+         - img-fluid: responsive image
+         - rounded: rounded corners
+         - shadow-sm: small shadow effect -->
+  </section>
 
-<body>
-<div id="wrapper">
-  <!--header starts-->
-  <header id="banner">
-    <h1>Portfolio — Ayman Sohail</h1>
-    <nav>
-      <ul id="main-nav">
-        <li><a href="/" class="button">Home</a></li>
-        <li><a href="/about" class="button">About</a></li>
-        <li><a href="/projects" class="button">Projects</a></li>
-        <li><a href="/contact" class="button">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!--header ends-->
+  <!--project 2-->
+  <section class="project mb-4">
+    <h3>Network Topology (Packet Tracer)</h3>
+    <p>Designed VLANs, routing, and addressing for a multi-branch setup using Cisco Packet Tracer.</p>
+    <img class="thumb zoomable img-fluid rounded shadow-sm"
+         src="/images/Network-Project.jpg"
+         alt="Project 2 thumbnail" />
+  </section>
 
-  <!--article starts-->
-  <article>
+  <!--project 3-->
+  <section class="project mb-4">
+    <h3>Dice Game</h3>
+    <p>Created a small dice game using Python. Allows users to roll the dice and play until the game ends.</p>
+    <img class="thumb zoomable img-fluid rounded shadow-sm"
+         src="/images/Dice game.jpg"
+         alt="Project 3 thumbnail" />
+  </section>
 
-    <h2>Projects</h2>
+  <!--project 4-->
+  <section class="project mb-4">
+    <h3>Task Manager (Java)</h3>
+    <p>CRUD with priority scheduling and deadline sorting. Allows users to manage and organize tasks.</p>
+    <img class="thumb zoomable img-fluid rounded shadow-sm"
+         src="/images/calender.png"
+         alt="Project 4 thumbnail" />
+  </section>
 
-    <!--writing code and adding section for project 1-->
-    <section class="project">
-    
-        <h3>Library Management System</h3>
+  <!--project 5-->
+  <section class="project mb-4">
+    <h3>Operator Assignment</h3>
+    <p>Created a program that allows the user to add the respective operator or word to calculate an equation.</p>
+    <img class="thumb zoomable img-fluid rounded shadow-sm"
+         src="/images/Math game.jpg"
+         alt="Project 5 thumbnail" />
+  </section>
 
-        <p>Console-based OOP project with file handling and exceptions. Allows users/librarians to borrow, return and view available books.</p>
-        <!--adding a short description for project 1-->
+  <div class="clear"></div>
+</article>
 
-        <img class="thumb zoomable" src="/images/Library-Project.jpg" alt="Project 1 thumbnail"/>
-        <!--image thumb nail with alt text for accessibility-->
-
-    </section>
-
-    <!--project 2-->
-    <!-- project 2 -->
-    <section class="project">
-        <h3>Network Topology (Packet Tracer)</h3>
-        <p>Designed VLANs, routing, and addressing for a multi-branch setup. With the use of Cisco Packet Tracer.</p>
-        <img class="thumb zoomable" src="/images/Network-Project.jpg" alt="Project 2 thumbnail" />
-    </section>
-
-
-    <!--project 3-->
-    <section class="project">
-        <h3>Dice Game</h3>
-        <p>Created a small dice game using Python. Allows users to roll the dice and play until game ends.</p>
-        <img class="thumb zoomable" src="/images/Dice game.jpg" alt="Project 3 thumbnail" />
-        <!-- If the filename has a space, keep it exactly or rename to 'Dice-game.jpg' and update the path -->
-    </section>
-
-
-    <!--project 4-->
-    <section class="project">
-        <h3>Task Manager (Java)</h3>
-        <p>CRUD with priority scheduling and deadline sorting. Allows users to manage and organize tasks.</p>
-        <img class="thumb zoomable" src="/images/calender.png" alt="Project 4 thumbnail" />
-    </section>
-
-    <!--project 5-->
-    <section class="project">
-        <h3>Operator assignment</h3>
-        <p>Created a program that allows the user to add the respective operator or word to calculate an equation.</p>
-        <img class="thumb zoomable" src="/images/Math game.jpg" alt="Project 5 thumbnail" />
-        <!-- Same note about spaces in filenames -->
-    </section>
-
-    <div class="clear"></div>
-
-  </article>
-  <!--article ends-->
-
-  <!--footer starts-->
-  <footer>
-
-     <p>&copy; <%= new Date().getFullYear() %> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
- 
-  </footer>
-  <!--footer ends-->
-
-  </div>
-  <!--wrapper ends-->
-
-  </body>
-  </html>
-  <!--Document ends-->
+<%- include('partials/footer') %>

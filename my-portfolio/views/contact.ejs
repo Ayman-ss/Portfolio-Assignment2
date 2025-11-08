@@ -1,83 +1,69 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%= title || "Portfolio — Ayman Sohail" %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<%- include('partials/header', { title: 'Contact — Ayman Sohail' }) %>
+<!-- Shared header keeps <head>, Bootstrap/FA, and nav consistent -->
 
-  <!--Desktop styles-->
-  <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
+<article class="container my-5">
+  <!-- I wrapped content in a Bootstrap container for clean spacing -->
 
-  <!--Tablet styles-->
-  <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
+  <h2 class="text-center mb-4">Contact Me</h2>
 
-  <!-- Mobile styles -->
-  <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
-</head>
+  <!-- Success banner (shows after a good submit) -->
+  <% if (sent) { %>
+    <div class="alert alert-success" role="alert">
+      Thanks! Your message was submitted.
+    </div>
+  <% } %>
 
-<body>
-<div id="wrapper">
-  <header id="banner">
-    <h1>Portfolio — Ayman Sohail</h1>
-    <nav>
-      <ul id="main-nav">
-        <li><a href="/" class="button">Home</a></li>
-        <li><a href="/about" class="button">About</a></li>
-        <li><a href="/projects" class="button">Projects</a></li>
-        <li><a href="/contact" class="button">Contact</a></li>
+  <!-- Error list (shows if the server returns validation errors) -->
+  <% if (errors && errors.length) { %>
+    <div class="alert alert-danger" role="alert">
+      <ul class="mb-0">
+        <% errors.forEach(e => { %><li><%= e %></li><% }) %>
       </ul>
-    </nav>
-  </header>
+    </div>
+  <% } %>
 
-  <!--article starts-->
-  <article>
-    
-    <h2>Contact Me</h2>
+  <p class="text-center">
+    Please fill out the form and I'll get back to you.
+  </p>
 
-    <p>Please fill out the form and I'll get back to you.</p>
-    <!--text indicator for users to know they can fill this page out for me to get back to them-->
+  <form id="contact" action="/contact" method="post" novalidate
+        class="mx-auto" style="max-width: 600px;">
+    <!-- .mx-auto centers the form; max-width keeps it from stretching -->
 
-    <form id="contact" action="/contact" method="post" novalidate>
-    <!--creating a user input form using <form>. action="/contact" means it will send data to the contact route. novalidate is used to disable browsers default validation so the custom validation can be applied-->
+    <!-- Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" name="name" type="text" class="form-control" required
+             value="<%= (values && values.name) || '' %>">
+      <!-- I keep the value if validation fails so users don’t retype -->
+    </div>
 
-        <!--Label for name input-->
-        <p><label for="name">Name</label><br>
-        <input id="name" name="name" type="text" required></p>
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" name="email" type="email" class="form-control" required
+             value="<%= (values && values.email) || '' %>">
+    </div>
 
-        <!--Label for email input-->
-        <p><label for="email">Email</label><br>
-        <input id="email" name="email" type="email" required></p>
-        <!--type="email" is used to validate that the entry is an email address-->
+    <!-- Phone -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Cell No.</label>
+      <input id="phone" name="phone" type="tel" class="form-control" required
+             pattern="^[0-9\\-\\s\\(\\)]{7,}$" placeholder="e.g., 647-555-0123"
+             value="<%= (values && values.phone) || '' %>">
+    </div>
 
-        <!--Label for phone input-->
-        <p><label for="phone">Cell No.</label><br>
-        <input id="phone" name="phone" type="tel" required
-             pattern="^[0-9\\-\\s\\(\\)]{7,}$" placeholder="e.g., 647-555-0123"></p>
+    <!-- Comments -->
+    <div class="mb-3">
+      <label for="msg" class="form-label">Comments</label>
+      <textarea id="msg" name="msg" rows="6" class="form-control" required><%= (values && values.msg) || '' %></textarea>
+    </div>
 
-        <!--Label for comments input-->
-        <p><label for="msg">Comments</label><br>
-        <textarea id="msg" name="msg" rows="6" required></textarea></p>
+    <!-- Submit -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary px-4">Submit</button>
+    </div>
+  </form>
+</article>
 
-        <!--adding a submit button to submit the form data-->
-        <p><button type="submit">Submit</button></p>
-   
-    </form>
-
-  </article>
-  <!--article ends-->
-
-
-  <!--Footer starts-->
-  <footer>
-
-     <p>&copy; <%= new Date().getFullYear() %> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
-
-  </footer>
-  <!--footer ends-->
-
-</div>
-<!--wrapper ends-->
-
-</body>
-</html>
-<!--Document ends-->
+<%- include('partials/footer') %>

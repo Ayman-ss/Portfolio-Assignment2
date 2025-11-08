@@ -1,106 +1,67 @@
-<!DOCTYPE html>
-<!--This declares that the document is HTML5, it is required at the top of every modern HTML5 page-->
-<html lang="en">
-<!--root element of the document, lang="en" indicates the content is in english-->
+<%- include('partials/header', { title: 'Portfolio - Ayman Sohail' }) %>
+<!-- pulling in my shared header so the <head>, Bootstrap, FA, and navbar stay consistent -->
 
-<head>
-    <meta charset="UTF-8">
-    <!--sets character encoding to UTF-8 which is the standard for modern web, ensures special characters display correctly-->
-    
-    <title><%= title || "Portfolio - Ayman Sohail" %></title>
-    <!--sets the title of the page and shows in the broswer tab(also used by search engines)-->
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Home content -->
+<article class="container py-4">
+  <!-- I wrapped the page content in a Bootstrap container for nice horizontal padding
+       and added py-4 for comfortable vertical spacing -->
 
-    <!--Desktop-->
-    <link rel="stylesheet" href="/stylesheets/style-desktop.css" media="screen and (min-width: 1025px)">
-    <!--links the destop stylesheet, applies the CSS rules when the screen size is at least 1025px wide-->
+  <h2 class="text-center mb-3">Welcome</h2>
+  <!-- centered the heading and gave it some space below -->
 
-    <!--Tablet-->
-    <link rel="stylesheet" href="/stylesheets/style-tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)">
-    <!-- Links the tablet stylesheet, applies the CSS rules when the screen size is between 641px and 1024px -->
+  <p class="lead text-center mx-auto" style="max-width: 800px;">
+    This is my HTML5/CSS3 portfolio built with floats, fluid design, media queries,
+    semantic tags, and simple CSS transforms. This portfolio now uses Node.js,
+    Express, and EJS templates — combining front-end design with dynamic rendering.
+  </p>
+  <!-- made the intro a Bootstrap "lead" paragraph, centered it, and limited width
+       so it’s easier to read on big screens -->
 
-    <!--Mobile-->
-    <link rel="stylesheet" href="/stylesheets/style-mobile.css" media="screen and (max-width: 640px)">
-    <!--Links the mobile stylesheet, applies the CSS rules when the screen size is 640px or smaller -->
+  <section id="promo" class="mt-4">
+    <!-- featured section with a little top margin -->
 
-</head>
-<!--head ends-->
+    <h3 class="h4 text-uppercase text-center mb-3">Featured</h3>
+    <!-- smaller, uppercase subheading to match the section vibe -->
 
-<!--body starts-->
-<body>
-<!--contains everything visible on the page-->
+    <div class="row g-3 justify-content-center">
+      <!-- Bootstrap grid: row with gap between items; center the group -->
 
-<div id="wrapper">
-<!--a div tag to hold the entire layout, makes it easier to style content-->
+      <div class="col-6 col-md-3">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <p class="mb-0 fw-semibold">HTML5</p>
+          </div>
+        </div>
+      </div>
 
-    <!--Headers starts-->
-    <header id="banner">
-    <!--semantic header element for the top banner-->
+      <div class="col-6 col-md-3">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <p class="mb-0 fw-semibold">CSS3</p>
+          </div>
+        </div>
+      </div>
 
-        <h1>Portfolio - Ayman Sohail</h1>
-        <!--Main heading (most important) defines the title of the page-->
+      <div class="col-6 col-md-3">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <p class="mb-0 fw-semibold">Node.js</p>
+          </div>
+        </div>
+      </div>
 
-        <nav>
-        <!--semantic <nav> element(holds the navigation menus for the site)-->
-            
-            <ul id="main-nav">
-            <!-- unordered list for the navigation structure -->
-                
-                <li><a href="/" class="button">Home</a></li>
-                <!--list item witj a link to the homepage using <a>-->
-                
-                <li><a href="/about" class="button">About</a></li>
-                <!--link to the About page-->
+      <div class="col-6 col-md-3">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <p class="mb-0 fw-semibold">Git</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- I replaced my old .box divs with Bootstrap cards inside a responsive grid.
+         On phones it shows 2 per row; on md+ it shows 4 in a row. -->
+  </section>
+</article>
 
-                <li><a href="/projects" class="button">Projects</a></li>
-                <!--link to the Projects page-->
-
-                <li><a href="/contact" class="button">Contact</a></li>
-                <!--link to the Contact page-->
-            
-         </ul>
-        </nav>
-    </header> <!--Header ends-->
-
-    <article>
-    <!--semantuc <article> tag-->
-        
-        <h2>Welcome</h2>
-        <!--Secondary heading-->
-
-        <p>This is my HTML5/CSS3 portfolio built with floats, fluid design, media queries, semantic tags, and simple CSS transforms.</p>
-        <!--<p> is a Paragraph element that holds text related content-->
-         
-        <section id="promo">
-        
-        <h3>Featured</h3>
-        <!--tertiary heading-->
-        
-        <div class="box"><p>HTML5</p></div>
-        <!--a div tag with a class "box"-->
-
-        <div class="box"><p>CSS3</p></div>
-
-        <div class="box"><p>Responsive</p></div>
-        <!--Highlights responsive design-->
-
-        <div class="box"><p>Accessibility</p></div>
-        <!--Highlights accessibility practices-->
-
-        <div class="clear"></div>
-        <!-- Used to clear floats in CSS-->
-
-        </section>
-    </article>
-
-
-    <footer>
-    <!--contains copyright  or contact infrormation-->
-    <p>&copy; <span id="year">2025</span> Ayman Sohail — <a href="mailto:ayman.sohail@ontariotechu.net">ayman.sohail@ontariotechu.net</a></p>
-
-    </footer>
-</div>
-</body> <!--body ends-->
-</html>
-<!--index document ends-->
+<%- include('partials/footer') %>
+<!-- shared footer keeps copyright + social links consistent and closes tags -->
